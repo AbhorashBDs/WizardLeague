@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private Vector2 moveDirection = Vector2.zero;
     // Start is called before the first frame update
@@ -18,14 +18,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
+        rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
     }
 }
