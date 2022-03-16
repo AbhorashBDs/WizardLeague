@@ -40,10 +40,28 @@ public class BallBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Calculate the reflection of the ball
         currentSpeed = ballVelocity.magnitude;
         currentDirection = Vector3.Reflect(ballVelocity.normalized, collision.contacts[0].normal);
         rb.velocity = currentDirection * Mathf.Clamp(currentSpeed,speedMin, speedMax);
-        oldVelocity = rb.velocity;
+
+        //Tentative de calcul d'un angle mais Atan2 ne semble pas fonctionner
+        //Debug.Log("current direction" + currentDirection);
+        //Debug.Log("ball velocity" + ballVelocity);
+
+        //float angle2 = Vector2.SignedAngle(ballVelocity, currentDirection);
+        //Debug.Log("signedangle"+angle2);
+        ////Get the fireball to face the right direction
+        ////Vector3 targ = currentDirection;
+        ////targ.z = 0f;
+        ////Vector3 objectPos = transform.position;
+        ////targ.x = targ.x - objectPos.x;
+        ////targ.y = targ.y - objectPos.y;
+        //float angle = Mathf.Atan2(rb.velocity.x, rb.velocity.y) * Mathf.Rad2Deg;
+        //Debug.Log("angle" + angle);
+        //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        //oldVelocity = rb.velocity;
         isLaunched = true;
     }
 
