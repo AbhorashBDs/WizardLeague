@@ -8,12 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     public Animator animator;
+    private SpriteRenderer sprRender;
 
     private Vector2 moveDirection = Vector2.zero;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprRender=GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -23,9 +25,26 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
+        //if (moveX > 0)
+        //{
+        //    sprRender.flipX = true;
+        //}
+        //else if (moveX < 0)
+        //{
+        //    sprRender.flipX = false;
+        //}
+
         float shieldMoveX = Input.GetAxisRaw("Horizontal2");
         float shieldMoveY = Input.GetAxisRaw("Vertical2");
-        Debug.Log(shieldMoveY+ shieldMoveX);
+
+        if (shieldMoveX > 0)
+        {
+            sprRender.flipX = true;
+        }
+        else if (shieldMoveX < 0)
+        {
+            sprRender.flipX = false;
+        }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
 
