@@ -45,12 +45,6 @@ public class BallBehavior : MonoBehaviour
         rb.velocity = currentDirection * Mathf.Clamp(currentSpeed,speedMin, speedMax);
         oldVelocity = rb.velocity;
         isLaunched = true;
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(collision.gameObject);
-            Debug.Log("Perdu!");
-        }
     }
 
 
