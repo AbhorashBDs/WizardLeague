@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     private static AudioManager p_instance = null;
     public static AudioManager Instance { get { return p_instance; } }
 
-    private AudioSource musique;
+    public AudioSource musicSource;
 
     [System.Serializable]
     public class Son
@@ -37,6 +37,8 @@ public class AudioManager : MonoBehaviour
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
 
+        DontDestroyOnLoad(gameObject);
+
         //Sets this to not be destroyed when reloading scene
         // DontDestroyOnLoad(gameObject);   par nécessaire ici car déja fait par script __DDOL sur l'objet _EGO_app qui recueille tous les mgr
         p_sons = new Dictionary<string, AudioClip[]>();
@@ -63,7 +65,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic()
     {
-        musique.Play();
+        musicSource.Play();
     }
 }
 
