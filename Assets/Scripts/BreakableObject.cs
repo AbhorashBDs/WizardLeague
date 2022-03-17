@@ -7,10 +7,12 @@ public class BreakableObject : MonoBehaviour
 
     public float hitNeeded;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,12 +26,19 @@ public class BreakableObject : MonoBehaviour
         if (collision.gameObject.CompareTag("Fireball"))
         {
             hitNeeded -= 1;
-            if (hitNeeded == 0) 
+            if (hitNeeded <= 0) 
             {
-                Debug.Log("LaunchAnimation");
-                Destroy(gameObject);
+                animator.SetTrigger("Destroy");
             }
         }
+    }
+
+    public void DestroyFences()
+    {
+        //Destroy(gameObject);
+
+
+        GetComponent<Collider2D>().enabled = false;
     }
 
 }
