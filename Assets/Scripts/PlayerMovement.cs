@@ -9,13 +9,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
     private SpriteRenderer sprRender;
+    private Animator playerAnimator;
 
     private Vector2 moveDirection = Vector2.zero;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprRender=GetComponent<SpriteRenderer>();
+        sprRender = GetComponent<SpriteRenderer>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+
+        if (moveX != 0)
+        {
+            playerAnimator.SetFloat("Movement_Speed", Mathf.Abs(moveX));
+        }
+        else playerAnimator.SetFloat("Movement_Speed", Mathf.Abs(moveY));
 
         animator.SetFloat("Horizontal", shieldMoveX);
         animator.SetFloat("Vertical", shieldMoveY);
