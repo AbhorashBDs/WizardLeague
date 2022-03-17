@@ -22,7 +22,9 @@ public class BallBehavior : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        Debug.Log("Force");
         rb.AddForce(Vector2.down * force);
+        Debug.Log(rb.velocity);
     }
     // Update is called once per frame
     void Update()

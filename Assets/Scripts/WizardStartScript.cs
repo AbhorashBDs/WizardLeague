@@ -21,7 +21,9 @@ public class WizardStartScript : MonoBehaviour
 
     public void InstantiateFireball()
     {
+        fireballPrefab.transform.position = transform.position;
         Instantiate(fireballPrefab);
+        
     }
 
 
