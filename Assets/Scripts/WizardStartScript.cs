@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WizardStartScript : MonoBehaviour
 {
@@ -39,7 +40,11 @@ public class WizardStartScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fireball"))
         {
-            Debug.Log("NextLevel");
+            if ((SceneManager.GetActiveScene().buildIndex + 1) <= SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else SceneManager.LoadScene(0);
         }
     }
 }
