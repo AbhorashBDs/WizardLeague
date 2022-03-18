@@ -9,6 +9,7 @@ public class WizardStartScript : MonoBehaviour
     public Animator animator;
 
     public PlayerMovement player;
+    public float offsetBall;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class WizardStartScript : MonoBehaviour
 
     public void InstantiateFireball()
     {
-        fireballPrefab.transform.position = transform.position;
+        fireballPrefab.transform.position = new Vector2(transform.position.x, transform.position.y+offsetBall);
         Instantiate(fireballPrefab);
         
     }

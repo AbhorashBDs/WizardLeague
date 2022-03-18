@@ -9663,6 +9663,10 @@ PrefabInstance:
       propertyPath: wizardPos
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4027436450431542552, guid: 5239b94b70e31c14b8d28731b2122733, type: 3}
+      propertyPath: offsetBall
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 4027436450431542553, guid: 5239b94b70e31c14b8d28731b2122733, type: 3}
       propertyPath: m_Name
       value: Wizard

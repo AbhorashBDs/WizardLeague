@@ -9741,6 +9741,10 @@ PrefabInstance:
       propertyPath: wizardPos
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4027436450431542552, guid: 5239b94b70e31c14b8d28731b2122733, type: 3}
+      propertyPath: offsetBall
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 4027436450431542553, guid: 5239b94b70e31c14b8d28731b2122733, type: 3}
       propertyPath: m_Name
       value: Wizard
@@ -10085,17 +10089,17 @@ Transform:
   - {fileID: 1469688286}
   - {fileID: 2046856534}
   - {fileID: 308301400}
+  - {fileID: 249486160}
   - {fileID: 615873849}
   - {fileID: 1000286724}
   - {fileID: 1381406780}
   - {fileID: 1341991219}
   - {fileID: 221006760}
-  - {fileID: 768005245}
-  - {fileID: 249486160}
   - {fileID: 977943703}
-  - {fileID: 609123560}
+  - {fileID: 768005245}
   - {fileID: 1809673216}
   - {fileID: 2065669834}
+  - {fileID: 609123560}
   - {fileID: 1385463074}
   - {fileID: 796570980}
   - {fileID: 975662963}
