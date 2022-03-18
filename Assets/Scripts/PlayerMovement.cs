@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator playerAnimator;
 
     private Vector2 moveDirection = Vector2.zero;
+
+    public bool constraintsMovement = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +25,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+        
 
         //if (moveX > 0)
         //{
@@ -62,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
+        if (constraintsMovement == false)
+        {
+            rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
+        }
     }
 }

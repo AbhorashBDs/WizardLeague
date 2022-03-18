@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerEnd : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class PlayerEnd : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fireball"))
         {
-            Debug.Log("Perdu");
             Destroy(gameObject.transform.parent.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

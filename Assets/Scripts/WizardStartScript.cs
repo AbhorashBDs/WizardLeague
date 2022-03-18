@@ -7,6 +7,8 @@ public class WizardStartScript : MonoBehaviour
     public GameObject fireballPrefab;
     public Animator animator;
 
+    public PlayerMovement player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,11 @@ public class WizardStartScript : MonoBehaviour
         fireballPrefab.transform.position = transform.position;
         Instantiate(fireballPrefab);
         
+    }
+
+    public void AllowMovement()
+    {
+        player.constraintsMovement = false;
     }
 
 

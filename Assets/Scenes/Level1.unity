@@ -9523,6 +9523,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3460781705235513657, guid: 5d4b33c9d37a355439d2a916e7c762c9, type: 3}
   m_PrefabInstance: {fileID: 1693949472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1707330810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8152338204635410573, guid: 0eb45048d1b080d4c9df7c4cec55941f, type: 3}
+  m_PrefabInstance: {fileID: 8152338203784020512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806e4c20d0c8c4e4397262f057ed42fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1806005061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9644,6 +9655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4027436450431542552, guid: 5239b94b70e31c14b8d28731b2122733, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1707330810}
     - target: {fileID: 4027436450431542552, guid: 5239b94b70e31c14b8d28731b2122733, type: 3}
       propertyPath: wizardPos
       value: 
